@@ -36,7 +36,7 @@ input[type="submit"]{
 }
 
 .col-6 {
-	width: 100%;
+
 	padding: 10px 0;
 	float: left;
 	margin-bottom: 15px;
@@ -103,6 +103,15 @@ img.albumArt {
 		display: block;
 		width: 100%;
 	}
+}
+
+@media screen and (max-width: 767px) {
+	.col-6 {
+		width: 70%;
+	
+	}
+
+
 }
 
 /*Tablet Viewport*/
