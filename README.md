@@ -5,11 +5,13 @@ The application was developed with the objective of identifying top artists, via
 Application: https://spotify-cap.herokuapp.com/
 
 API
-- Google Maps
-- Spotify 
+- Google Maps (https://developers.google.com/maps/documentation/javascript/tutorial)
+- Spotify (https://github.com/thelinmichael/spotify-web-api-node)
 
 Technology
 - HTML (Handlebars)
 - CSS
 - JavaScript
 - jQuery
+
+Screenshots
