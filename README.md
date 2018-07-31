@@ -2,6 +2,17 @@
 
 <p>The application was developed with the objective of identifying top artists, via Spotify API, by country.</p>
 
+<p>Instructions:</p>
+<ul>
+	</li>Search For Top Artists</li>
+	<li>
+		<ul>
+			<li>Option 1: Enter country into input box</li>
+			<li>Option 2: Drag location marker on map to desired country</li>
+		</ul>
+	</li>
+</ul>
+
 <h6>Application:</h6> https://spotify-cap.herokuapp.com/
 
 <h3>API</h3>
