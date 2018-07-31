@@ -15,3 +15,4 @@ Technology
 - jQuery
 
 Screenshots
+![Alt text](public/images/screenshots/spotify-mobile.png?raw=true "Optional Text")
