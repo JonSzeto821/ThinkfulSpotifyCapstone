@@ -21,10 +21,10 @@
 
 <h3>Screenshots</h3>
 <h5>Small Viewport</h5>
-<img src="public/images/screenshots/spotify-mobile.png" alt="Small Viewport" width="150px"/>
+<img src="public/images/screenshots/spotify-mobile.png" alt="Small Viewport" width="300px"/>
 
 <h5>Medium Viewport</h5>
-<img src="public/images/screenshots/spotify-medium.png" alt="Medium Viewport" width="150px"/>
+<img src="public/images/screenshots/spotify-medium.png" alt="Medium Viewport" width="300px"/>
 
 <h5>Large Viewport</h5>
-<img src="public/images/screenshots/spotify-desktop.png" alt="Large Viewport" width="150px"/>
+<img src="public/images/screenshots/spotify-desktop.png" alt="Large Viewport" width="300px"/>
