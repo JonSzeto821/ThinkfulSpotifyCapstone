@@ -9,21 +9,22 @@ var codeAddress = function (city='Spain') {
   geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map = new google.maps.Map(document.getElementById('mapCanvas'), {
-    zoom: 6,
-            streetViewControl: false,
-          mapTypeControlOptions: {
-        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-              mapTypeIds:[google.maps.MapTypeId.HYBRID, google.maps.MapTypeId.ROADMAP] 
-    },
-    center: results[0].geometry.location,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
+        zoom: 6,
+        streetViewControl: false,
+        mapTypeControlOptions: {
+          style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+          mapTypeIds:[google.maps.MapTypeId.HYBRID, google.maps.MapTypeId.ROADMAP] 
+        },
+        center: results[0].geometry.location,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
       map.setCenter(results[0].geometry.location);
       marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location,
-          draggable: true,
-          title: 'My Title'
+        map: map,
+        position: results[0].geometry.location,
+        draggable: true,
+        title: 'My Title'
       });
       updateMarkerPosition(results[0].geometry.location);
       geocodePosition(results[0].geometry.location);
@@ -81,7 +82,7 @@ function geocodePosition(pos) {
 }
 
 function updateMarkerStatus(str) {
-  console.log(str);
+  // console.log(str);
   document.getElementById('markerStatus').innerHTML = str;
 }
 
@@ -93,7 +94,7 @@ function updateMarkerPosition(latLng) {
 }
 
 function updateMarkerAddress(str) {
-  console.log(str);
+  // console.log(str);
   $.post("/location", {countryCode: str}, function(result){
     document.getElementById('address').innerHTML = str;
     console.log(result);
@@ -110,31 +111,13 @@ function loopThroughPlaylist(data) {
     //console.log(data[i].uri);
     songHTML += 
     //try to make the button toggle between 'play' and 'pause' (play with the button tags)
-      `
-      <div class="song-detail">
+      `<div class="song-detail">
         <img src="${data[i].images[0].url}" alt="Album Artwork" class="albumArt"></img><br>  
         <span class="bold">Artist:</span> ${data[i].artists[0].name}<br>
         <span class="bold">Top Album:</span> ${data[i].name} <br>
         <div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album js-play-toggle'><button class="play-toggle button"></button></div>
-      </div>
-        
-      `
+      </div>`
 
   }
   $('.results').html(songHTML);
-
-  /*$(document).ready(function() {
-  var btn = $(".button");
-  btn.click(function() {
-    btn.toggleClass("paused");
-    console.log('Its Toggling!!!');
-    return false;
-  });
-});*/
-
-
-
-
-  //let audioObject = new Audio(data.tracks.items[0].preview_url); //create a new audio object using the data returned from Spotify.com
-  //        audioObject.play(); //play the song!!!
 }
