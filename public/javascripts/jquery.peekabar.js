@@ -1,6 +1,4 @@
 ;(function($) {
-
-	/** Enable strict mode. */
 	'use strict';
 
 	$.peekABar = function(options) {

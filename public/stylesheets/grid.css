@@ -108,10 +108,7 @@ img.albumArt {
 @media screen and (max-width: 767px) {
 	.col-6 {
 		width: 70%;
-	
 	}
-
-
 }
 
 /*Tablet Viewport*/
@@ -165,8 +162,6 @@ img.albumArt {
 
 	.col-6 {
 		width: 100%;
-		/*padding: 15px;
-		margin: 15px;*/
 	}
 
 	.map-wrapper {

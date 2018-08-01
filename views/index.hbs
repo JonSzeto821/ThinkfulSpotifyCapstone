@@ -4,6 +4,7 @@
   <div class="map-wrapper">
   	<div id="mapCanvas"></div>
   </div>
+  
   <div id="panel" class="clearfix">
     <h3 id="test" class="center"><span class="instructions">Instructions:</span> {{description}}</h3>
   	<form>
@@ -13,13 +14,10 @@
       	<input type="submit" value="Search" onclick="codeAddress()" class="submitListener js-button btn" name="countrySearch">
   	</form>  
   </div>
+
   <div id="infoPanel">
-    <!--<b>Marker status:</b>-->
-    <div id="markerStatus"><i><!--Click and drag the marker.--></i></div>
-    <!--<b>Current position:</b>-->
+    <div id="markerStatus"><i></i></div>
     <div id="info"></div>
-    <!--<b>Fetched ISO-3166-2 code from Google Maps API:</b>-->
-    <!--<div id="address"></div>-->
   </div>
 
   <div class="result-wrapper">
