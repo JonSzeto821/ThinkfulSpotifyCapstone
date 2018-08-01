@@ -38,7 +38,7 @@ router.post('/artist', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
 	// Get Elvis' albums
-		res.render('index', { title: 'Discover Top Artists by Country', description: 'Search for a country in input box (below) or click on a country on map (above)', albums:[] });
+		res.render('index', { title: 'Discover Top Artists by Country', description: 'Search for a country in input box or drag location marker to a country on map (above)', albums:[] });
 	})
 
 router.post('/tracks', function(req, res, next) {
