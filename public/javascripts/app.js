@@ -3,7 +3,7 @@ let play = false;
 let playingSong = null;
 
 
-$('body').on('click', '.album', function (e) { 
+$('body').on('click', '.album', function(e) {
 	if(!play){
 		audioObject.pause();
 		if(playingSong == $(this).data('album-id')){
@@ -23,58 +23,58 @@ $('body').on('click', '.album', function (e) {
 	    artist: artist
 	}
 
-	$.post("/tracks", data, function(result, status, xhr){
-        	for(let i = 0; i < result.data.length; i++){
-				if(result.data[i].preview_url !== null){
-	        		audioObject.pause();
-	        		audioObject = new Audio(result.data[i].preview_url);
-					audioObject.play();
+	$.post("/tracks", data, (result, status, xhr) => {
+    for(let i = 0; i < result.data.length; i++){
+			if(result.data[i].preview_url !== null){
+    		audioObject.pause();
+    		audioObject = new Audio(result.data[i].preview_url);
+				audioObject.play();
 
-					return;
-				}
-        	}
-        	
-        	play = false;
-    		var bar = new $.peekABar({
-    			html: 'Oh no! There\'s no Music!!!!!',
-    			backgroundColor: 'red',
-				autohide: true,
-			});
-			bar.show();
-			$(t).find('button').remove();
-			window.t = t;
-    	});   
-    });
+				return;
+			}
+  	}
 
-$('.results').on('click', '.js-play-toggle', function(){
+    play = false;
+		var bar = new $.peekABar({
+			html: 'Oh no! There\'s no Music!!!!!',
+			backgroundColor: 'red',
+			autohide: true,
+		});
+		bar.show();
+		$(t).find('button').remove();
+		window.t = t;
+  	});
+});
+
+$('.results').on('click', '.js-play-toggle', () => {
 	play = !play;
 });
 
-$(function(){
+$(() => {
 	const recentSearch = [];
 
-    $("form").submit(function(event) {
-	    event.preventDefault();
-	    codeAddress();
-	    
-	    const userInput = $(".searchBox").val().toUpperCase();
-	    let titleDisplay = $(".searchBox").val().toLowerCase();
-	    let historyHTML= '';
-		let titleRender= '';	    
-	    
-	    $(".searchBox").val('');
+  $("form").submit(event => {
+    event.preventDefault();
+    codeAddress();
 
-	    titleRender += `<h2>Top Artists for <span class="capitalize">${titleDisplay}</span></h2>`;
-	    $('#countryRender').html(titleRender);
+    const userInput = $(".searchBox").val().toUpperCase();
+    let titleDisplay = $(".searchBox").val().toLowerCase();
+    let historyHTML= '';
+		let titleRender= '';
 
-	    recentSearch.push(userInput);
-	    for(let i=0; i < recentSearch.length; i++){
-	    	historyHTML += `<div class="js-recentCountry recentCountry">${recentSearch[i]}</div>`;
-	    }
+    $(".searchBox").val('');
 
-	    $('#previouslySearched').html(historyHTML);
-  	});
- 
+    titleRender += `<h2>Top Artists for <span class="capitalize">${titleDisplay}</span></h2>`;
+    $('#countryRender').html(titleRender);
+
+    recentSearch.push(userInput);
+    for(let i=0; i < recentSearch.length; i++){
+    	historyHTML += `<div class="js-recentCountry recentCountry">${recentSearch[i]}</div>`;
+    }
+
+    $('#previouslySearched').html(historyHTML);
+	});
+
  	$('#previouslySearched').on('click', '.js-recentCountry', function(){
  		codeAddress($(this).text()).toUpperCase();
  	});

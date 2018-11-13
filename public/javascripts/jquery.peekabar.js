@@ -1,4 +1,4 @@
-;(function($) {
+$($ => {
 	'use strict';
 
 	$.peekABar = function(options) {
@@ -14,34 +14,31 @@
 
 		/** Defaults */
 		var defaults = {
-			html: 'Your Message Here',
 			delay: 3000,
-			autohide: false,
 			padding: '1em',
-			backgroundColor: 'rgb(195, 195, 195)',
 			animation: {
 				type: 'slide',
 				duration: 'slow'
 			},
 			cssClass: null,
-			opacity: '1',
+			opacity: '.8',
 			position: 'top',
 
-			onShow: function() {},
-			onHide: function() {},
+			onShow: () => {},
+			onHide: () => {},
 
 			closeOnClick: false
 		};
 
 		/** Initialise the plugin */
-		var init = function() {
+		var init = () => {
 			that.settings = $.extend({}, defaults, options);
 			_create();
 			_applyCustomSettings();
 		};
 
 		/** Show the Bar */
-		this.show = function(args) {
+		this.show = args => {
 			if(args !== undefined) {
 				if(args.html) {
 					this.bar.html(args.html);
@@ -64,7 +61,7 @@
 		};
 
 		/** Hide the Bar */
-		this.hide = function() {
+		this.hide = () => {
 			switch (this.settings.animation.type) {
 				case 'slide':
 					this.bar.slideUp(that.settings.animation.duration);
@@ -77,14 +74,14 @@
 		};
 
 		/** Create the Bar */
-		var _create = function() {
+		var _create = () => {
 			that.bar = $('<div></div>').addClass('peek-a-bar').attr('id', '__peek_a_bar_' + rand);
 			$('html').append(that.bar);
 			that.bar.hide();
 		};
 
 		/** Apply Custom Bar Settings */
-		var _applyCustomSettings = function() {
+		var _applyCustomSettings = () => {
 			_applyHTML();
 			_applyAutohide();
 			_applyPadding();
@@ -92,47 +89,46 @@
 			_applyOpacity();
 			_applyCSSClass();
 			_applyPosition();
-			_applyCloseOnClick();
 		};
 
 		/** Set Custom Bar HTML */
-		var _applyHTML = function() {
+		var _applyHTML = () => {
 			that.bar.html(that.settings.html);
 		};
 
 		/** Autohide the Bar */
-		var _applyAutohide = function() {
+		var _applyAutohide = () => {
 			if(that.settings.autohide) {
-				setTimeout(function () {
+				setTimeout(() => {
 					that.hide();
 				}, that.settings.delay);
 			}
 		};
 
 		/** Apply Padding */
-		var _applyPadding = function() {
+		var _applyPadding = () => {
 			that.bar.css('padding', that.settings.padding);
 		};
 
 		/** Apply Background Color */
-		var _applyBackgroundColor = function() {
+		var _applyBackgroundColor = () => {
 			that.bar.css('background-color', that.settings.backgroundColor);
 		};
 
 		/** Apply Custom CSS Class */
-		var _applyCSSClass = function() {
+		var _applyCSSClass = () => {
 			if(that.settings.cssClass !== null) {
 				that.bar.addClass(that.settings.cssClass);
 			}
 		};
 
 		/** Apply Opacity */
-		var _applyOpacity = function() {
+		var _applyOpacity = () => {
 			that.bar.css('opacity', that.settings.opacity);
 		};
 
 		/** Apply Position where the Bar should be shown */
-		var _applyPosition = function() {
+		var _applyPosition = () => {
 			switch(that.settings.position) {
 				case 'top':
 					that.bar.css('top', 0);
@@ -145,17 +141,7 @@
 			}
 		};
 
-		/** Close the bar on click */
-		var _applyCloseOnClick = function() {
-			if(that.settings.closeOnClick) {
-				that.bar.click(function() {
-					that.hide();
-				});
-			}
-		};
-
 		init();
-
 		return this;
 	}
 
