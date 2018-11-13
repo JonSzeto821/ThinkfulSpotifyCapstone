@@ -9,46 +9,46 @@ var spotifyApi = new SpotifyWebApi({
 });
 
 spotifyApi.clientCredentialsGrant()
-.then(function(data) {
-	spotifyApi.setAccessToken(data.body['access_token']);
-}, function(err) {
-
-});
-
-router.post('/artist', function(req, res, next) {
-	spotifyApi.searchArtists(req.body.artist)
-	.then(function(data) {
-		return res.status(200).json({data:data.body.artists.items});
-	}, function(err) {
-
+	.then(data => {
+		spotifyApi.setAccessToken(data.body['access_token']);
+	}, err => {
+		console.log(err);
 	});
 
+router.post('/artist', (req, res, next) => {
+	spotifyApi.searchArtists(req.body.artist)
+		.then(data => {
+			return res.status(200).json({data:data.body.artists.items});
+		}, err => {
+			console.log(err);
+		});
+
 });
 
-router.get('/', function(req, res, next) {
-		res.render('index', 
-			{ 
-				title: 'Discover Top Artists by Country', 
-				description: 'Search for a country in input box or drag location marker to a country on map (above)', 
-				albums:[] 
+router.get('/', (req, res, next) => {
+		res.render('index',
+			{
+				title: 'Discover Top Artists by Country',
+				description: 'Search for a country in input box or drag location marker to a country on map (above)',
+				albums:[]
 			});
 	})
 
 router.post('/tracks', function(req, res, next) {
 	spotifyApi.searchTracks(`artist:${req.body.artist}`)
-	  .then(function(data) {
+	  .then(data => {
 	    return res.status(200).json({data:data.body.tracks.items});
-	  }, function(err) {
-
+	  }, err => {
+			console.log(err);
 	  });
 });
 
-router.post('/location', function(req, res, next) {
+router.post('/location', (req, res, next) => {
 	spotifyApi.getNewReleases({ limit : 5, offset: 1, country: req.body.countryCode, timestamp:'2014-10-23T09:00:00' })
-		.then(function(data) {
+		.then(data => {
 			return res.status(200).json({featurePlaylist:data.body});
-		}, function(err) {
-
+		}, err => {
+			console.log(err);
 	});
 });
 
