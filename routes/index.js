@@ -34,7 +34,7 @@ router.get('/', (req, res, next) => {
 			});
 	})
 
-router.post('/tracks', function(req, res, next) {
+router.post('/tracks', (req, res, next) => {
 	spotifyApi.searchTracks(`artist:${req.body.artist}`)
 	  .then(data => {
 	    return res.status(200).json({data:data.body.tracks.items});
