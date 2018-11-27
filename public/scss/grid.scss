@@ -1,3 +1,5 @@
+@import 'mixins';
+
 * {
  	box-sizing: border-box;
 }
@@ -12,19 +14,19 @@ form{
 	padding-bottom: 10px;
 }
 
-input[type="textbox"]{ 
+input[type="textbox"]{
 	padding: 5px 10px;
 	margin-bottom: 10px;
 	line-height: 40px;
 	width: 100%;
-	font-size: 18px; 
+	font-size: 18px;
 }
 
-input[type="submit"]{ 
+input[type="submit"]{
 	padding: 5px 10px;
 	line-height: 40px;
 	width: 35%;
-	font-size: 18px; 
+	font-size: 18px;
 }
 
 .play-toggle {
@@ -36,7 +38,7 @@ input[type="submit"]{
 }
 
 .col-6 {
-
+  width: 100%;
 	padding: 10px 0;
 	float: left;
 	margin-bottom: 15px;
@@ -89,8 +91,8 @@ img.albumArt {
 	content: '';
 }
 
-@media screen and (max-width: 400px) {
-	h2 {
+@include maxMQ(400px) {
+  h2 {
 		font-size: 36px;
 		margin: 15px 0;
 	}
@@ -105,15 +107,15 @@ img.albumArt {
 	}
 }
 
-@media screen and (max-width: 767px) {
-	.col-6 {
-		width: 70%;
-	}
-}
+// @media screen and (max-width: 767px) {
+// 	.col-6 {
+// 		width: 70%;
+// 	}
+// }
 
 /*Tablet Viewport*/
-@media screen and (min-width: 401px) {
-	h1 {
+@include minMQ(401px) {
+  h1 {
 		font-size: 175%;
 	}
 
@@ -123,17 +125,17 @@ img.albumArt {
 		margin: auto;
 	}
 
-	input[type="textbox"]{ 
+	input[type="textbox"]{
 		width: 75%;
 		font-size: 24px;
 		max-width: 900px;
 		min-width: 400px;
 	}
 
-	input[type="submit"]{ 
+	input[type="submit"]{
 		line-height: 35px;
 		width: 20%;
-		font-size: 18px; 
+		font-size: 18px;
 		max-width: 600px;
 		min-width: 300px;
 	}
@@ -185,16 +187,15 @@ img.albumArt {
 
 	#mapCanvas {
 		width: 100%;
-  		height: 400px;
-  		margin: auto;
+  	height: 400px;
+  	margin: auto;
 	}
 }
 
-
 /*Desktop Viewport*/
-@media screen and (min-width: 768px) {
-	h1 {
-		font-size: 350%;	
+@include minMQ(768px) {
+  h1 {
+		font-size: 350%;
 	}
 
 	.row-1 {
@@ -235,5 +236,3 @@ img.albumArt {
   		margin: auto;
 	}
 }
-
-

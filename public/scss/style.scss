@@ -1,9 +1,12 @@
+@import 'variables';
+@import 'grid';
+
 h1, h2 {
-  font-family: 'Crimson Text', serif;
+  font-family: $crimsonFont;
 }
 
 h3, body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $openSansFont;
 }
 
 body {
@@ -89,6 +92,13 @@ h1, h3 {
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  &:hover {
+    background: #3cb0fd;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 .button {
@@ -102,30 +112,20 @@ h1, h3 {
   cursor: pointer;
   border-style: solid;
   border-width: 37px 0 37px 60px;
-}
-
-.btn:hover {
-  background: #3cb0fd;
-  text-decoration: none;
-}
-
-.btn:focus {
-  outline: none;
+  &:hover {
+    border-color: transparent transparent transparent #404040;
+  }
 }
 
 .button.paused {
   border-style: double;
   border-width: 0px 0 0px 60px;
 }
-.button:hover {
-  border-color: transparent transparent transparent #404040;
-}
 
 #infoPanel {
   float: left;
   margin-left: 10px;
-}
-
-#infoPanel div {
-  margin-bottom: 5px;
+  div {
+    margin-bottom: 5px;
+  }
 }
