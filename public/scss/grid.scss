@@ -1,3 +1,5 @@
+@import 'mixins';
+
 * {
  	box-sizing: border-box;
 }
@@ -36,7 +38,7 @@ input[type="submit"]{
 }
 
 .col-6 {
-
+  width: 100%;
 	padding: 10px 0;
 	float: left;
 	margin-bottom: 15px;
@@ -89,8 +91,8 @@ img.albumArt {
 	content: '';
 }
 
-@media screen and (max-width: 400px) {
-	h2 {
+@include maxMQ(400px) {
+  h2 {
 		font-size: 36px;
 		margin: 15px 0;
 	}
@@ -105,15 +107,15 @@ img.albumArt {
 	}
 }
 
-@media screen and (max-width: 767px) {
-	.col-6 {
-		width: 70%;
-	}
-}
+// @media screen and (max-width: 767px) {
+// 	.col-6 {
+// 		width: 70%;
+// 	}
+// }
 
 /*Tablet Viewport*/
-@media screen and (min-width: 401px) {
-	h1 {
+@include minMQ(401px) {
+  h1 {
 		font-size: 175%;
 	}
 
@@ -185,15 +187,14 @@ img.albumArt {
 
 	#mapCanvas {
 		width: 100%;
-  		height: 400px;
-  		margin: auto;
+  	height: 400px;
+  	margin: auto;
 	}
 }
 
-
 /*Desktop Viewport*/
-@media screen and (min-width: 768px) {
-	h1 {
+@include minMQ(768px) {
+  h1 {
 		font-size: 350%;
 	}
 

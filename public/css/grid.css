@@ -32,6 +32,7 @@ input[type="submit"] {
   display: none; }
 
 .col-6 {
+  width: 100%;
   padding: 10px 0;
   float: left;
   margin-bottom: 15px; }
@@ -84,10 +85,6 @@ img.albumArt {
   #previouslySearched {
     display: block;
     width: 100%; } }
-
-@media screen and (max-width: 767px) {
-  .col-6 {
-    width: 70%; } }
 
 /*Tablet Viewport*/
 @media screen and (min-width: 401px) {
