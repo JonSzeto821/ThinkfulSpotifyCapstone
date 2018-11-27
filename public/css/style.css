@@ -1,0 +1,111 @@
+h1, h2 {
+  font-family: 'Crimson Text', serif; }
+
+h3, body {
+  font-family: 'Open Sans', sans-serif; }
+
+body {
+  padding: 10px;
+  background-color: #D6E1E8; }
+
+a {
+  color: #00B7FF; }
+
+h1 {
+  display: block;
+  text-align: center; }
+
+h2 {
+  color: #F4F7F9; }
+
+h1, h3 {
+  color: #7492A6; }
+
+.bold {
+  font-weight: 900;
+  font-size: 18px; }
+
+.instructions {
+  font-size: 24px; }
+
+.center {
+  text-align: center; }
+
+.capitalize {
+  text-transform: capitalize; }
+
+.result-background {
+  background-color: #AABFCD;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.searchBox {
+  text-align: center; }
+
+.clearfix {
+  clear: both; }
+
+.float-left {
+  float: left; }
+
+.map-wrapper {
+  display: block;
+  width: 90%;
+  margin: auto; }
+
+.peek-a-bar {
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: black;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 900;
+  font-family: 'Crimson Text', serif; }
+
+.btn {
+  background: #3498db;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none; }
+
+.button {
+  border: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 0;
+  height: 74px;
+  border-color: transparent transparent transparent #202020;
+  -webkit-transition: 100ms all ease;
+  -o-transition: 100ms all ease;
+  transition: 100ms all ease;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 37px 0 37px 60px; }
+
+.btn:hover {
+  background: #3cb0fd;
+  text-decoration: none; }
+
+.btn:focus {
+  outline: none; }
+
+.button.paused {
+  border-style: double;
+  border-width: 0px 0 0px 60px; }
+
+.button:hover {
+  border-color: transparent transparent transparent #404040; }
+
+#infoPanel {
+  float: left;
+  margin-left: 10px; }
+
+#infoPanel div {
+  margin-bottom: 5px; }
