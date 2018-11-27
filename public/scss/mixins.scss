@@ -9,3 +9,8 @@
     @content;
   }
 }
+
+@mixin rowDisplay {
+  display: table;
+  content: '';
+}

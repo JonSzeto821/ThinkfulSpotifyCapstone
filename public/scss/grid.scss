@@ -8,8 +8,7 @@
 	display: none;
 }
 
-/*Media Queries*/
-	/*Mobile Viewport*/
+/*Mobile Viewport*/
 form{
 	padding-bottom: 10px;
 }
@@ -58,6 +57,9 @@ input[type="submit"]{
 .recentCountry {
 	font-size: 22px;
 	font-weight: bolder;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .albumArt {
@@ -69,6 +71,12 @@ input[type="submit"]{
 .row {
  	max-width: 1000px;
  	margin: 0 auto;
+  &:before {
+    @include rowDisplay;
+  }
+  &:after {
+    @include rowDisplay;
+  }
 }
 
 img.albumArt {
@@ -79,16 +87,6 @@ img.albumArt {
 
 #infoPanel {
 	display: none;
-}
-
-.recentCountry:hover {
-	text-decoration: underline;
-}
-
-.row::before,
-.row::after {
-	display: table;
-	content: '';
 }
 
 @include maxMQ(400px) {
@@ -106,12 +104,6 @@ img.albumArt {
 		width: 100%;
 	}
 }
-
-// @media screen and (max-width: 767px) {
-// 	.col-6 {
-// 		width: 70%;
-// 	}
-// }
 
 /*Tablet Viewport*/
 @include minMQ(401px) {

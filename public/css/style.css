@@ -5,7 +5,6 @@
 .hide {
   display: none; }
 
-/*Media Queries*/
 /*Mobile Viewport*/
 form {
   padding-bottom: 10px; }
@@ -49,6 +48,8 @@ input[type="submit"] {
 .recentCountry {
   font-size: 22px;
   font-weight: bolder; }
+  .recentCountry:hover {
+    text-decoration: underline; }
 
 .albumArt {
   height: 100%;
@@ -59,6 +60,12 @@ input[type="submit"] {
 .row {
   max-width: 1000px;
   margin: 0 auto; }
+  .row:before {
+    display: table;
+    content: ''; }
+  .row:after {
+    display: table;
+    content: ''; }
 
 img.albumArt {
   min-width: 200px;
@@ -67,14 +74,6 @@ img.albumArt {
 
 #infoPanel {
   display: none; }
-
-.recentCountry:hover {
-  text-decoration: underline; }
-
-.row::before,
-.row::after {
-  display: table;
-  content: ''; }
 
 @media screen and (max-width: 400px) {
   h2 {
