@@ -1,3 +1,5 @@
+@import 'grid';
+
 h1, h2 {
   font-family: 'Crimson Text', serif;
 }
@@ -89,6 +91,13 @@ h1, h3 {
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  &:hover {
+    background: #3cb0fd;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 .button {
@@ -104,14 +113,6 @@ h1, h3 {
   border-width: 37px 0 37px 60px;
 }
 
-.btn:hover {
-  background: #3cb0fd;
-  text-decoration: none;
-}
-
-.btn:focus {
-  outline: none;
-}
 
 .button.paused {
   border-style: double;
