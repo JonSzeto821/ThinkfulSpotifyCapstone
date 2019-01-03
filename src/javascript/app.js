@@ -35,12 +35,12 @@ $('body').on('click', '.album', function(e) {
   	}
 
     play = false;
-		var bar = new $.peekABar({
-			html: 'Oh no! There\'s no Music!!!!!',
-			backgroundColor: 'red',
-			autohide: true,
-		});
-		bar.show();
+		// var bar = new $.peekABar({
+		// 	html: 'Oh no! There\'s no Music!!!!!',
+		// 	backgroundColor: 'red',
+		// 	autohide: true,
+		// });
+		// bar.show();
 		$(t).find('button').remove();
 		window.t = t;
   	});
