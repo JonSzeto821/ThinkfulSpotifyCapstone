@@ -3,10 +3,12 @@ const sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
+const cleanCSS = require('gulp-clean-css');
 
 gulp.task('sass', () => {
   return gulp.src('src/scss/style.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS())
     .pipe(gulp.dest('public/css'));
 })
 
