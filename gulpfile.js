@@ -22,9 +22,9 @@ gulp.task('imageMin', () => {
 //compile & minify js files to one files
 gulp.task('scripts', () => {
   return gulp.src('src/javascript/*.js')
-  .pipe(concat('main.js'))
-  .pipe(terser())
-  .pipe(gulp.dest('public/javascript'));
+    .pipe(concat('main.js'))
+    .pipe(terser())
+    .pipe(gulp.dest('public/javascript'));
 });
 
 gulp.task('default', gulp.series(['sass', 'imageMin', 'scripts']));
