@@ -1,6 +1,8 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin');
+const concat = require('gulp-concat');
+const terser = require('gulp-terser');
 
 gulp.task('sass', () => {
   return gulp.src('src/scss/style.scss')
@@ -14,3 +16,13 @@ gulp.task('imageMin', () => {
     .pipe(imagemin())
     .pipe(gulp.dest('public/images/screenshots'));
 });
+
+//compile & minify js files to one files
+gulp.task('scripts', () => {
+  return gulp.src('src/javascript/*.js')
+  .pipe(concat('main.js'))
+  .pipe(terser())
+  .pipe(gulp.dest('public/javascript'));
+});
+
+gulp.task('default', gulp.series(['sass', 'imageMin']));

@@ -1,5 +1,4 @@
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 .hide {
@@ -24,8 +23,6 @@ input[type="submit"] {
   font-size: 18px; }
 
 .play-toggle {
-  -webkit-transform: scale(0.4);
-  -ms-transform: scale(0.4);
   transform: scale(0.4); }
 
 .map-wrapper {
@@ -53,7 +50,6 @@ input[type="submit"] {
 .albumArt {
   height: 100%;
   width: 100%;
-  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .row {
@@ -123,7 +119,6 @@ img.albumArt {
     display: block;
     width: 90%;
     margin: auto;
-    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border: 1px solid black; }
   .play-toggle {
@@ -205,7 +200,6 @@ h1, h3 {
 
 .result-background {
   background-color: #AABFCD;
-  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .searchBox {
@@ -251,13 +245,10 @@ h1, h3 {
 .button {
   border: 0;
   background: transparent;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 0;
   height: 74px;
   border-color: transparent transparent transparent #202020;
-  -webkit-transition: 100ms all ease;
-  -o-transition: 100ms all ease;
   transition: 100ms all ease;
   cursor: pointer;
   border-style: solid;
