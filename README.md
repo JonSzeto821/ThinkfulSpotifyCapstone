@@ -24,6 +24,8 @@
   <li>CSS</li>
   <li>JavaScript</li>
   <li>jQuery</li>
+  <li>Sass</li>
+  <li>Gulp</li>
 </ul>
 
 <h3>Screenshots</h3>
