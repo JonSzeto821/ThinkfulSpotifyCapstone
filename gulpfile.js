@@ -25,4 +25,10 @@ gulp.task('scripts', () => {
   .pipe(gulp.dest('public/javascript'));
 });
 
-gulp.task('default', gulp.series(['sass', 'imageMin']));
+gulp.task('default', gulp.series(['sass', 'imageMin', 'scripts']));
+
+gulp.task('watch', () => {
+  gulp.watch('src/scss/*.scss', gulp.series('sass'));
+  gulp.watch('src/images/screenshots/*', gulp.series('imageMin'));
+  gulp.watch('src/javascript/*.js', gulp.series('scripts'));
+});
